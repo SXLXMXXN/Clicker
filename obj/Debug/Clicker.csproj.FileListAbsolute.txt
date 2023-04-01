@@ -3,10 +3,12 @@ D:\lesson\Clicker\Clicker\bin\Debug\Clicker.exe
 D:\lesson\Clicker\Clicker\bin\Debug\Clicker.pdb
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.csproj.AssemblyReference.cache
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.csproj.SuggestedBindingRedirects.cache
+D:\lesson\Clicker\Clicker\obj\Debug\Style\Style.baml
 D:\lesson\Clicker\Clicker\obj\Debug\MainWindow.g.cs
 D:\lesson\Clicker\Clicker\obj\Debug\App.g.cs
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker_MarkupCompile.cache
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker_MarkupCompile.lref
+D:\lesson\Clicker\Clicker\obj\Debug\App.baml
 D:\lesson\Clicker\Clicker\obj\Debug\MainWindow.baml
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.g.resources
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.Properties.Resources.resources
@@ -14,3 +16,7 @@ D:\lesson\Clicker\Clicker\obj\Debug\Clicker.csproj.GenerateResource.cache
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.csproj.CoreCompileInputs.cache
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.exe
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.pdb
+D:\lesson\Clicker\Clicker\obj\Debug\Test.g.cs
+D:\lesson\Clicker\Clicker\obj\Debug\Test.baml
+D:\lesson\Clicker\Clicker\obj\Debug\Coordinate.g.cs
+D:\lesson\Clicker\Clicker\obj\Debug\Coordinate.baml
