@@ -22,7 +22,8 @@ namespace Clicker
     {
         private bool _isBinding = false;
         private bool _isStartBinding = false;
-        public bool _isClick = false;
+        public bool IsClick = false;
+        private Key _actionKey;
         public MainWindow()
         {
             InitializeComponent();
@@ -93,6 +94,7 @@ namespace Clicker
             if (_isBinding)
             {
                 KeyBindText.Text = e.Key.ToString();
+                _actionKey = e.Key;
                 _isBinding = false;
             }
             else if (_isStartBinding)
@@ -104,19 +106,28 @@ namespace Clicker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _isClick = true;
+            IsClick = true;
             Coordinate _coordinate = new Coordinate(this);
             _coordinate.Show();
         }
 
-        private void Grid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
+       
 
         private void StartBindButton_Click(object sender, RoutedEventArgs e)
         {
             _isStartBinding = true;
+        }
+
+        private void Add_Button_Click(object sender, RoutedEventArgs e)
+        {
+            int delay = Convert.ToInt32(DelayText.Text);
+            var type = BaseAction.FromString((ActionComboBox.SelectedItem as ComboBoxItem).Name);
+            int coordx = Convert.ToInt32(CoordX.Text);
+            int coordy = Convert.ToInt32(CoordY.Text);
+            int repeat = Convert.ToInt32(RepeatText.Text);
+
+            BaseAction action = new BaseAction(_actionKey, delay, type , coordx, coordy, repeat);
+            OrderList.Items.Add(action);
         }
     }
 }

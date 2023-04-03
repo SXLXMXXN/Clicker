@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Action.cs" />
+    <Compile Include="BaseAction.cs" />
     <Compile Include="Coordinate.xaml.cs">
       <DependentUpon>Coordinate.xaml</DependentUpon>
     </Compile>

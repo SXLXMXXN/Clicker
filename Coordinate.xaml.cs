@@ -43,7 +43,7 @@ namespace Clicker
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            _mainWindow._isClick = false;
+            _mainWindow.IsClick = false;
             _timer.Stop();
             Close();
         }
