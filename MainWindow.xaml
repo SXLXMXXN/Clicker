@@ -39,7 +39,8 @@
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
                           FontFamily="Unispace"
                           BorderThickness="0" SizeChanged="ListView_SizeChanged"
-                          FontSize="12"
+                          FontSize="10"
+                          
                           >
                     
                     <ListView.View>
@@ -55,13 +56,25 @@
                             <GridViewColumn HeaderContainerStyle="{StaticResource RoundedCellHeaderCenter}"
                                             DisplayMemberBinding="{Binding Coords}" Header="Coords"/>
                             <GridViewColumn HeaderContainerStyle="{StaticResource RoundedCellHeaderCenter}"
-                                            DisplayMemberBinding="{Binding Delay}" Header="Delay"/>
+                                            DisplayMemberBinding="{Binding DelayInView}" Header="Delay"/>
                             <GridViewColumn HeaderContainerStyle="{StaticResource RoundedCellHeaderCenter}"
-                                            DisplayMemberBinding="{Binding Relative}" Header="Relative&#x0a; coords"/>
+                                                                  Header="Relative&#x0a;coords">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding RelativeCoord}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                             <GridViewColumn HeaderContainerStyle="{StaticResource RoundedCellHeaderCenter}"
-                                            DisplayMemberBinding="{Binding Current}" Header="Current&#x0a; coords"/>
+                                            Header="Current&#x0a;coords">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding CurrentCoord}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                             <GridViewColumn HeaderContainerStyle="{StaticResource RoundedCellHeaderCenter}"
-                                            DisplayMemberBinding="{Binding Repeat}" Header="Repeat"/>
+                                            DisplayMemberBinding="{Binding RepeatInView}" Header="Repeat"/>
                             <GridViewColumn HeaderContainerStyle="{StaticResource RoundedCellHeaderCenter}"
                                             Header="">
                                 <GridViewColumn.CellTemplate>
@@ -134,7 +147,7 @@
                                 FontSize="10"
                                 Height="18"
                                 Width="56" 
-                                Style="{DynamicResource RoundButton}"/>
+                                Style="{DynamicResource RoundButton}" Click="Button_Click_1"/>
                     </Viewbox>
 
                     <Viewbox Margin="10,10,10,10"
@@ -240,7 +253,8 @@
                     <Viewbox Grid.Column="4"
                              Grid.Row="1"
                              Margin="-6,-5,0,-5" >
-                        <CheckBox Content="CTRL"
+                        <CheckBox Name="CTRL_BaseKey"
+                                  Content="CTRL"
                                   FontFamily="Unispace"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
@@ -250,7 +264,8 @@
                     <Viewbox Grid.Column="4"
                              Grid.Row="2"
                              Margin="-6,-5,1,-5" >
-                        <CheckBox Content="SHIFT"
+                        <CheckBox Name="Shift_BaseKey"
+                                  Content="SHIFT"
                                   FontFamily="Unispace"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Center"/>
@@ -259,7 +274,8 @@
                     <Viewbox Grid.Column="5"
                              Grid.Row="2"
                              Margin="-5,-5,0,-5" >
-                        <CheckBox Content="ALT"
+                        <CheckBox Name="ALT_BaseKey"
+                                  Content="ALT"
                                   FontFamily="Unispace"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Center"
@@ -310,7 +326,7 @@
                                  Height="20" 
                                  FontFamily="Unispace"
                                  TextAlignment="Center"
-                                 Style="{DynamicResource RoundTextBox}"/>
+                                 Style="{DynamicResource RoundTextBox}" TextChanged="Coord_TextChanged"/>
                     </Viewbox>
 
                     <Viewbox Margin="10,5,10,5"
@@ -324,13 +340,14 @@
                                  FontFamily="Unispace"
                                  MaxLength="5"
                                  TextAlignment="Center" 
-                                 Style="{DynamicResource RoundTextBox}"/>
+                                 Style="{DynamicResource RoundTextBox}" TextChanged="Coord_TextChanged"/>
                     </Viewbox>
 
                     <Viewbox Grid.Column="3"
                              Grid.Row="5"
                              Margin="-5,-5,-5,-5">
-                        <CheckBox Content="RELATIVE"
+                        <CheckBox Name="Relative_Check"
+                                  Content="RELATIVE"
                                   FontFamily="Unispace"
                                   Width="95" />
                     </Viewbox>
@@ -338,7 +355,8 @@
                     <Viewbox Grid.Column="3"
                              Grid.Row="6"
                              Margin="-5,-5,-5,-5">
-                        <CheckBox Content="CURRENT"
+                        <CheckBox Name="Current_Check"
+                                  Content="CURRENT"
                                   FontFamily="Unispace"
                                   Width="95" />
                     </Viewbox>

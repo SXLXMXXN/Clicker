@@ -26,7 +26,7 @@ namespace Clicker
         {
             InitializeComponent();
             _mainWindow = mainwindow;
-            _timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            _timer.Interval = new TimeSpan(0, 0, 0, 0,50);
             _timer.Tick += PerformCaptureMouse;
             _timer.Start();
         }
@@ -34,8 +34,7 @@ namespace Clicker
         private void PerformCaptureMouse(object sender, EventArgs eventArgs)
         {
             CaptureMouse();
-            var point = Mouse.GetPosition(this);
-            point = Mouse.GetPosition(this);
+            var point = MousePosition.GetMousePosition();
             _mainWindow.CoordX.Text = point.X.ToString();
             _mainWindow.CoordY.Text = point.Y.ToString();
             ReleaseMouseCapture();

@@ -56,12 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseAction.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Coordinate.xaml.cs">
       <DependentUpon>Coordinate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Test.xaml.cs">
-      <DependentUpon>Test.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="MousePosition.cs" />
     <Page Include="Coordinate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,10 +78,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Style\Style.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

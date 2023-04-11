@@ -20,6 +20,7 @@ namespace Clicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Controller _controller = new Controller();
         private bool _isBinding = false;
         private bool _isStartBinding = false;
         public bool IsClick = false;
@@ -60,11 +61,11 @@ namespace Clicker
             
             var col1 = 0.05;
             var col2 = 0.10;
-            var col3 = 0.05;
-            var col4 = 0.10;
+            var col3 = 0.2;
+            var col4 = 0.2;
             var col5 = 0.10;
-            var col6 = 0.20;
-            var col7 = 0.20;
+            var col6 = 0.05;
+            var col7 = 0.1;
             var col8 = 0.05;
             var col9 = 0.05;
             var col10 = 0.05;
@@ -125,9 +126,33 @@ namespace Clicker
             int coordx = Convert.ToInt32(CoordX.Text);
             int coordy = Convert.ToInt32(CoordY.Text);
             int repeat = Convert.ToInt32(RepeatText.Text);
+            bool relativecoord = Relative_Check.IsChecked.GetValueOrDefault();
+            Console.WriteLine(relativecoord);
+            bool currentcoord = Current_Check.IsChecked.GetValueOrDefault();
+            bool flagCtrl = CTRL_BaseKey.IsChecked.GetValueOrDefault();
+            bool flagShift = Shift_BaseKey.IsChecked.GetValueOrDefault();
+            bool flagAlt = ALT_BaseKey.IsChecked.GetValueOrDefault();
 
-            BaseAction action = new BaseAction(_actionKey, delay, type , coordx, coordy, repeat);
+            BaseAction action = new BaseAction(_actionKey, delay, type , coordx, coordy, repeat, relativecoord, currentcoord, flagCtrl, flagShift, flagAlt);
             OrderList.Items.Add(action);
+            _controller.Actions.Add(action);
+        }
+
+        private void Coord_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var text = sender as TextBox;
+            for (int i = 0; i < text.Text.Length; i++)
+            {
+                if (char.IsLetter(text.Text[i]))
+                {
+                    text.Text = "";
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            _controller.MouseMove(Convert.ToInt32(CoordX.Text), Convert.ToInt32(CoordY.Text));
         }
     }
 }

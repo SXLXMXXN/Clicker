@@ -16,7 +16,5 @@ D:\lesson\Clicker\Clicker\obj\Debug\Clicker.csproj.GenerateResource.cache
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.csproj.CoreCompileInputs.cache
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.exe
 D:\lesson\Clicker\Clicker\obj\Debug\Clicker.pdb
-D:\lesson\Clicker\Clicker\obj\Debug\Test.g.cs
-D:\lesson\Clicker\Clicker\obj\Debug\Test.baml
 D:\lesson\Clicker\Clicker\obj\Debug\Coordinate.g.cs
 D:\lesson\Clicker\Clicker\obj\Debug\Coordinate.baml
